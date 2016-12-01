@@ -13,15 +13,10 @@
         <spring.version>4.1.3.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
+        <postgresql.version>9.1-901.jdbc4</postgresql.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.medicinery</groupId>
-            <artifactId>api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!--Spring-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -48,6 +43,13 @@
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!--Postgres-->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
 
         <!--Hibernate-->

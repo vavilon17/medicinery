@@ -1,4 +1,7 @@
 package com.medicinery.web.init;
 
-public class MedicineryWebApplicationContext {
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+
+public class MedicineryWebApplicationContext extends AnnotationConfigWebApplicationContext {
+
 }

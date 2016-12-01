@@ -1,4 +1,8 @@
 package com.medicinery.core.dao.impl;
 
-public class MedicineInfoCoreDao {
+import com.medicinery.core.entity.MedicineInfoCore;
+
+public interface MedicineInfoCoreDao {
+
+    MedicineInfoCore findById(Long id);
 }
