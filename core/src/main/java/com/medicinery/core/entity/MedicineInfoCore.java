@@ -10,17 +10,21 @@ public class MedicineInfoCore {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tradenamename")
-    private String title;
-
     @Column(name = "orig_id")
     private Long origId;
 
-    @Column(name = "tradenameviewcount")
-    private Integer viewCount;
+    @Column(name = "tradenamename", nullable = false)
+    private String tradeNameName;
+
+    @Column(name = "tradenameviewcount", columnDefinition = "integer default 0")
+    private Integer tradeNameViewCount;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "details_id", unique = true, nullable = false)
+    private MedicineInfoDetails details;
 
     @Column(name = "visible")
-    private Boolean visible;
+    private boolean visible;
 
     public Long getId() {
         return id;
@@ -28,14 +32,6 @@ public class MedicineInfoCore {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public Long getOrigId() {
@@ -46,30 +42,35 @@ public class MedicineInfoCore {
         this.origId = origId;
     }
 
-    public Integer getViewCount() {
-        return viewCount;
+    public String getTradeNameName() {
+        return tradeNameName;
     }
 
-    public void setViewCount(Integer viewCount) {
-        this.viewCount = viewCount;
+    public void setTradeNameName(String tradeNameName) {
+        this.tradeNameName = tradeNameName;
     }
 
-    public Boolean getVisible() {
+    public Integer getTradeNameViewCount() {
+        return tradeNameViewCount;
+    }
+
+    public void setTradeNameViewCount(Integer tradeNameViewCount) {
+        this.tradeNameViewCount = tradeNameViewCount;
+    }
+
+    public MedicineInfoDetails getDetails() {
+        return details;
+    }
+
+    public void setDetails(MedicineInfoDetails details) {
+        this.details = details;
+    }
+
+    public boolean isVisible() {
         return visible;
     }
 
-    public void setVisible(Boolean visible) {
+    public void setVisible(boolean visible) {
         this.visible = visible;
-    }
-
-    @Override
-    public String toString() {
-        return "MedicineInfoCore{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", origId=" + origId +
-                ", viewCount=" + viewCount +
-                ", visible=" + visible +
-                '}';
     }
 }
