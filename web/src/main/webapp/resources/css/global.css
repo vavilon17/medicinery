@@ -1,0 +1,800 @@
+@charset utf-8;
+
+/*
+	Styles for
+	
+	MEDICAL
+
+	Oct 2014
+
+*/
+
+
+
+/*	=============================================
+	RESET
+	============================================= */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,img,ins,kbd,q,s,samp,small,strike,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,select{border:0;font-size:100%;font:inherit;vertical-align:baseline;outline:0;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+
+/*	=============================================
+	BASIC
+	============================================= */
+.clearfix,.root{*zoom:1}
+.clearfix:before,.root:before,
+.clearfix:after,.root:after{display:table;content:""}
+.clearfix:after,.root:after{clear:both}
+
+.footerfix, .footerfix body { height: 100%; }
+.footerfix body > .root { min-height: 100%; height: auto !important; height: 100%; }
+.footerfix .page-container { padding-bottom: 150px; }
+.footerfix footer { margin-top: -130px; height: 130px; }
+
+
+body {
+    font-family: Ubuntu, Arial, sans-serif;
+    line-height: 1.4285;
+}
+
+
+
+.root {
+    max-width:920px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+body > .root {
+    box-shadow: 0 0 1px 0px #777;
+}
+
+
+
+/*	=============================================
+	HEADER
+	============================================= */
+header {
+    padding:10px 20px;
+    margin: 0 -20px 10px;
+    box-shadow: 0px 1px 0px 0px #e1e1e1;
+}
+
+.main-logo {
+    float:left;
+    width:180px;
+    height:82px;
+    margin:4px 0;
+    background:url('../img/med/logo.png') 50% no-repeat;
+    font-size:0;
+}
+
+.main-logo:hover {
+    -webkit-filter: contrast(110%);
+    opacity:.85;
+}
+
+.banner-top.__tablet {
+    display: none;
+}
+
+.banner-top.__desktop {
+    float: right;
+    max-width: 728px;
+    max-height: 90px;
+    overflow: hidden;
+}
+
+
+
+/*	=============================================
+	FOOTER
+	============================================= */
+footer {
+
+}
+
+footer .root {
+    height:100%;
+    padding-top: 20px;
+    background: #018eaa;
+    box-shadow: 0px 1px 1px 0px #018eaa;
+}
+
+.footer-links {
+    float: left;
+    width: 220px;
+}
+
+.footer-links li {
+    font-size:14px;
+}
+
+.footer-links li + li {
+    margin: .5em 0;
+}
+
+.footer-links a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-disclaimer {
+    float: left;
+    box-sizing: border-box;
+    width: 520px;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 300;
+    background: #01839d;
+    color: #fff;
+
+}
+
+.footer-marketing {
+    float:left;
+    width: 160px;
+    margin-left: 20px;
+}
+
+.footer-socials {
+    font-size: 0;
+}
+
+.footer-socials li {
+    display: inline-block;
+}
+
+.footer-socials li + li {
+    margin-left: 20px;
+}
+
+.footer-socials a {
+    box-sizing:border-box;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url('') 50% no-repeat;
+    border:1px rgba(255,255,255,.5) solid;
+}
+
+.footer-socials a:hover {
+    border-color: rgba(255,255,255,1);
+}
+
+.footer-socials .__vk { background-image: url('../img/med/icon-vk.png'); }
+.footer-socials .__fb { background-image: url('../img/med/icon-fb.png'); }
+.footer-socials .__gp { background-image: url('../img/med/icon-gp.png'); }
+
+
+
+/*	=============================================
+	CONTENT
+	============================================= */
+.content-area {
+    float: left;
+    width:600px;
+}
+
+.widget-area {
+    float:right;
+    width: 300px;
+}
+
+.widget-area > :first-child {
+    margin-top:0!important;
+}
+
+.h1 {
+    margin-bottom: .75em;
+    font-size:22px;
+    color:#00a4c4;
+}
+
+.h2 {
+    margin-bottom: .75em;
+    font-size: 22px;
+    color: #000;
+}
+
+.h2 span {
+    color: #4c4c4c;
+}
+
+.h2 span:before,
+.h2 span:after {
+    content: '’’';
+}
+
+.h3 {
+    margin-bottom: 1em;
+    font-size: 26px;
+    line-height: 1;
+}
+
+.h3 span {
+    font-size: 22px;
+    color: #5a5a5a;
+}
+
+.h3 span:before {
+    content: '|';
+    margin: 0 .5em;
+}
+
+
+.fix-block { position: fixed; top: 20px; }
+
+.widget-prices { display: none; margin: 10px 0; text-align: center; background:#c7e5e9; padding: 1px 10px 10px; border: 1px #0e91a1 solid; }
+.fix-block .widget-prices { display: block; }
+
+
+.search-area {
+    padding: 20px;
+    margin: 0 auto 20px;
+    background: #018eaa;
+    border-radius:4px;
+    text-align: left;
+    font-family: Ubuntu, Arial, sans-serif;
+    font-weight: 400;
+}
+
+.search-area-mobile { display: none; }
+
+.search-area .__caption {
+    float:left;
+    font-size: 26px;
+    line-height: 1;
+    color:#fff;
+}
+
+.search-area .__letters {
+    float:right;
+    font-size:0;
+}
+
+.search-area .__letters li {
+    display:inline-block;
+    font-size:17px;
+    line-height: 26px;
+}
+
+.search-area .__letters li a {
+    display: block;
+    padding: 0 .25em;
+    color:#fff;
+    text-decoration: none;
+}
+
+.search-area .__letters li a:hover {
+    background: #fff;
+    color: #018eaa;
+    border-radius: 2px;
+}
+
+.search-area .__search-drug {
+    position: relative;
+    clear:both;
+    padding-top:20px;
+}
+
+.search-area .__search-drug input[type="text"] {
+    box-sizing: border-box;
+    display:block;
+    width:100%;
+    padding:10px 40px;
+    font-size: 20px;
+    line-height: normal;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-area .__search-drug input[type="text"]:focus {
+    box-shadow:0 0 2px 1px rgba(0,0,0,.75);
+}
+
+.search-area .__search-drug input[type="submit"] {
+    position:absolute;
+    top:20px;
+    left: 0;
+    display:block;
+    width:40px;
+    height:40px;
+    background: url('../img/med/icon-search.png') 50% no-repeat;
+    font-size:0!important;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.__quick-search {
+    position: absolute;
+    top: 63px;
+    left: 0px;
+    z-index: 0010;
+    display: none;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: -5px;
+    background: rgb(255, 255, 255);
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0px 3px 5px -1px #018eaa;
+}
+
+.__quick-search li {
+}
+
+.__quick-search li a {
+    display: block;
+    padding: 2px 1em 2px 40px;
+    text-decoration: none;
+    color: #018eaa;
+}
+
+.__quick-search li a:hover,
+.__quick-search li:focus a,
+.__quick-search li.__focus a {
+    background: #018eaa;
+    color: #fff;
+}
+
+.table-popular-main th {
+    font-weight: 400;
+    color: #5a5a5a;
+}
+
+.table-popular-main tr > * {
+    width:50%;
+    color: #4d4d4d;
+}
+
+.table-popular-main a {
+    display: block;
+    color: #4d4d4d;
+    text-decoration: none;
+}
+
+.table-popular-main a:hover {
+    text-decoration: underline;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.table td,
+.table th {
+    padding: .5em .75em;
+    border:1px #f0f0f0 solid;
+}
+
+.table th {
+    background: #fafafa;
+    text-align: left;
+    font-weight: 400;
+}
+
+
+.widget-popular {
+    display: block;
+    margin:20px auto;
+}
+
+.widget-popular li {
+    display: block;
+    padding-top: .1em .25em;
+    border:1px #f0f0f0 solid;
+    border-top-width: 0;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.widget-popular li:first-child {
+    border-top-width: 1px;
+}
+
+.widget-popular a {
+    display: block;
+    padding: .4em .5em;
+    color: #4c4c4c;
+    text-decoration: none;
+}
+
+.widget-popular a:hover {
+    text-decoration: underline;
+}
+
+.widget-similar .h2 {
+    font-size: 28px;
+}
+
+.catalog-list {
+    width: 100%;
+}
+
+.catalog-list td {
+    position: relative;
+    width: 50%;
+    padding:.15em 0;
+    vertical-align: top;
+}
+
+.catalog-list td:before {
+    position: absolute;
+    top: .35em;
+    left: 0;
+    font-weight: 800;
+    color: #018eaa;
+    content: "•";
+}
+
+.catalog-list a {
+    position: relative;
+    display: inline-block;
+    padding: .15em 0 .15em 15px;
+    color:#4c4c4c;
+    text-decoration: none;
+}
+
+.catalog-list a:hover {
+    color:#018eaa;
+    text-decoration: underline;
+}
+
+
+.item-data {
+    margin-bottom: 30px;
+}
+
+.item-data > img {
+    float: left;
+    max-width: 300px;
+    margin: 0 20px 0 0;
+}
+
+.item-details {
+    float: left;
+    max-width: 250px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.item-price {
+    margin-bottom: 1em;
+    font-size: 15px;
+    line-height: 18px;
+    color: #5a5a5a;
+}
+
+.item-price span {
+    font-size: 18px;
+    color: #018eaa;
+}
+
+.item-price span:after {
+    /*content: " грн"*/
+}
+
+.btn-item-action {
+    display: inline-block;
+    padding: .4em 1.5em;
+    font-size: 20px;
+    background: #0e91a1;
+    border:2px #0e91a1 solid;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+}
+
+.btn-item-action:hover {
+    background: #fff;
+    color: #0e91a1;
+    text-decoration: none;
+}
+
+.btn-item-action:active {
+    background: #f0f0f0;
+    color: #0e91a1;
+    box-shadow: inset 0 2px 2px 0px #ababab;
+}
+
+.item-shop {
+    clear:both;
+    display: block;
+    margin:15px auto 30px;
+}
+
+.item-shop-name {
+    padding-left: 25px;
+    margin-bottom: .5em;
+    font-size: 18px;
+    font-weight: 800;
+    color: #000;
+    background: url('../img/med/icon-shop-name.png') 0 0 no-repeat;
+}
+
+.item-shop-details {
+    margin-bottom: 1em;
+    font-size: 14px;
+    font-weight: 300;
+    color: #4c4c4c
+}
+
+.item-shop-details span {
+}
+
+.item-shop-details span:before {
+    padding: 0 .75em;
+    content: "|"
+}
+
+.item-shop-address {
+}
+
+.item-shop-address li {
+    margin: .3em 0;
+}
+
+.item-shop-address li:before {
+    float: left;
+    padding-right: .35em;
+    font-weight: bold;
+    color: #000;
+    content: "•";
+}
+
+.item-shop-address a {
+    position: relative;
+    display: block;
+    color: #018eaa;
+    text-decoration: underline;
+}
+
+.item-shop-address a:before {
+    position: absolute;
+    left: 5%;
+    bottom: .2em;
+    display: block;
+    width: 90%;
+    height: 100%;
+    border-bottom: 1px #444 dotted;
+    content: "";
+}
+
+.item-shop-address a:hover {
+    color: #26c6e7;
+}
+
+.item-shop-address li span {
+    position: relative;
+    padding: 0 .4em 5px 0;
+    margin-bottom: -5px;
+    background: #fff;
+}
+
+.item-shop-address li span + span {
+    float:right;
+    padding: 0 0 5px .4em;
+    font-weight: 600;
+    color: #000
+}
+
+.item-shop-address li span + span:after {
+    /*content: " грн."*/
+}
+
+
+.item-contents {
+    margin-bottom: 25px;
+}
+
+.item-contents li {
+    margin:.1em 0;
+}
+
+.item-contents a {
+    display: block;
+    padding: .2em;
+    font-size: 16px;
+    font-weight: 300;
+    color: #4c4c4c;
+
+}
+
+.item-contents a:hover {
+    color: #018eaa;
+    text-decoration: underline;
+}
+
+.item-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #4c4c4c;
+}
+
+.item-description :first-child {
+    margin-top: 0!important;
+}
+
+.item-description h4 {
+    font-size: 22px;
+    margin: 1em 0 .75em;
+    color: #000;
+}
+
+.item-description p {
+    margin-bottom: .75em;
+}
+
+.item-description ul {
+    margin: .5em 0 .75em;
+}
+
+.item-description ul > li {
+    margin: .25em 0;
+}
+
+.item-description ul > li:before {
+    padding-right: .5em;
+    font-weight: bold;
+    color: #018eaa;
+    content: "•";
+}
+
+
+/*	TABLET 	*/
+@media screen and (min-width: 641px) and (max-width: 959px) {
+
+    .footerfix, .footerfix body { height: 100%; }
+    .footerfix body > .root { min-height: 0; height: auto; }
+    .footerfix .page-container { padding-bottom: 0; margin-bottom: 30px; }
+    .footerfix footer { margin-top: auto; height:auto!important; }
+    footer .root { height: auto; }
+
+    .root {
+        max-width: 100%;
+    }
+
+    .banner-top.__desktop {
+        display: none;
+    }
+
+    .banner-top.__tablet {
+        float: right;
+        display: block;
+        max-width: 468px;
+        margin: 10px auto;
+        overflow: hidden;
+    }
+
+    .content-area {
+        float: none;
+        display: block;
+        width: auto;
+    }
+
+    .widget-area {
+        display: none;
+    }
+
+    .footer-links,
+    .footer-disclaimer,
+    .footer-marketing { width:100%;}
+
+    .footer-links,
+    .footer-marketing { text-align: center; }
+
+    .footer-marketing { margin: 10px auto; }
+}
+
+@media screen and (max-width: 750px) {
+    .search-area .__letters {
+        display: none;
+    }
+}
+
+
+/*	MOBILE 	*/
+@media screen and (max-width: 640px) {
+
+    body { font-family: sans-serif; line-height: 1.5; }
+
+    .root { padding: 0 3%; }
+
+    header {
+        position: fixed; top 0; left:0; z-index: 1010;
+        display: block; width:100%; height: 40px; box-sizing:border-box;
+        padding: 0 5%; margin: auto;
+        background: #018eaa;
+    }
+
+    header .btn-item-action {
+        display: block;
+        width: 100px;
+        margin: 5px auto 0;
+        font-size: 11px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    [class^=banner],
+    .widget-area { display:none; }
+
+    .main-logo { width: 32px; height: 32px; padding: 0; background-image:url('../img/med/logo-main-mobile.png'); background-size: contain; }
+
+    .page-container { padding-top: 50px; }
+
+    .search-area {
+        position:fixed; top: 40px; left: 0; z-index: 1110;
+        display: none; width: 100%; box-sizing: border-box;
+        padding: 5px; margin: 0;
+        border-radius: 0 0 4px 4px;
+    }
+    .search-area.__mobile-visible { display: block; }
+    .search-area .__letters,
+    .search-area p { display: none; }
+    .search-area .__search-drug { display: block; width:auto; padding-top: 0; }
+    .search-area .__search-drug input[type="text"] { padding: 10px 20px 10px 40px; }
+    .search-area .__search-drug input[type="submit"] { top:0; }
+    .search-area .__quick-search { top: 43px; }
+
+    .search-area-mobile { position:fixed; top: 0; right: 5%; z-index: 1110; display: block; width: 32px; height: 32px; margin: 4px 0; background:url('../img/med/icon-search-mobile.png') 50% no-repeat; border-radius: 4px; }
+    .search-area-mobile.__active { box-shadow: inset 0 0 4px 1px #474747; background-color: #007991; }
+
+    .content-area { width: 100%; }
+
+
+    .footerfix, .footerfix body { height: 100%; }
+    .footerfix body > .root { min-height: 0; height: auto; }
+    .footerfix .page-container { padding-bottom: 0; margin-bottom: 30px; }
+    .footerfix footer { margin-top: auto; height:auto; }
+    footer .root { height: auto; }
+
+    .footer-links,
+    .footer-disclaimer,
+    .footer-marketing { width:100%;}
+
+    .footer-links,
+    .footer-marketing { text-align: center; }
+
+    .footer-marketing { margin: 10px auto; }
+
+    .catalog-list > li { max-width:50%; }
+
+    .item-data > img { float: none; display: block; max-width: 100%; margin:0 auto 10px; }
+
+    .h3 { text-align: center; }
+    .h3 span { display: block; margin: 5px auto; padding-top: 5px; border-top:1px #eaeaea solid; font-size: 70%; }
+    .h3 span:before { display: none; }
+
+    .item-details { float: none; padding-left: 0; margin: 0 auto; text-align: center; }
+
+    .item-shop-details span { display: block; margin: 5px 0; }
+    .item-shop-details span:before { display: none; }
+
+
+    .item-shop-address li:before { margin-top: 6px; }
+    .item-shop-address li + li { border-top:1px #e0e0e0 solid; }
+    .item-shop-address a { text-decoration: none; }
+    .item-shop-address a:before { display: none; }
+    .item-shop-address li span { display: inline-block; vertical-align: middle; padding-bottom: 0; padding-top:5px; margin-bottom: 0; background: none; }
+    .item-shop-address li span:first-child { width: 64%; }
+    .item-shop-address li span + span { float: none; padding-bottom: 0; margin-top: 5px; margin-bottom: 0; }
+
+    .item-description a[id] { display: inline-block; padding-top: 40px; margin-top: -40px; }
+}
+
+

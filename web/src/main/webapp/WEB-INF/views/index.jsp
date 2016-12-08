@@ -1,11 +1,66 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html class="footerfix">
 <head>
-    <title>Guten Tag</title>
+    <title>Справочник лекарств - поиск лекарств по аптекам. Цены на лекарства</title>
+    <%--contect of layout START--%>
+    <link rel="shortcut icon" href="/resources/img/favicon.ico" type="image/x-icon">
+    <link href="/resources/css/global.css" rel='stylesheet' type='text/css'>
+    <%--contect of layout END--%>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Сервис поиска лекарств и медикаментов в аптеках, инструкции, описание, сравнение цен">
+    <meta name="keywords" content="Поиск лекарств в аптеках, сравнение цен, наличие лекарств">
+    <meta charset="UTF-8"/>
 </head>
-<body>
-Guten Tag!
-Your medicine for today: <br>
-${entity}
+<body class="main">
+<%--<g:render template="/common/analytics/ga"/>--%>
+<div class="root">
+    <%@ include file="templates/header.jsp" %>
+    <div class="page-container clearfix">
+        <%@ include file="templates/search.jsp" %>
+        <%@ include file="templates/section_popular.jsp" %>
+        <%--<g:render template="/common/section_popular"/>--%>
+        <aside class="widget-area">
+            <%--<g:render template="/common/widget/widget_banner_premium" model="[showPrices: false]"/>--%>
+        </aside>
+    </div>
+</div>
+<%@ include file="templates/footer.jsp" %>
+<%--<g:render template="/common/analytics/yan_metr"/>--%>
+<%--from layout--%>
+<%@ include file="templates/config.jsp" %>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+<script src="/resources/js/common.js"></script>
 </body>
 </html>
+
+<%-- old GSP page
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+    <title>Справочник лекарств - поиск лекарств по аптекам. Цены на лекарства</title>
+    <meta name="layout" content="maim_custom"/>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Сервис поиска лекарств и медикаментов в аптеках, инструкции, описание, сравнение цен">
+    <meta name="keywords" content="Поиск лекарств в аптеках, сравнение цен, наличие лекарств">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<g:render template="/common/analytics/ga"/>
+<div class="root">
+    <g:render template="/common/header"/>
+    <div class="page-container clearfix">
+        <g:render template="/common/search"/>
+        <g:render template="/common/section_popular"/>
+        <aside class="widget-area">
+            <g:render template="/common/widget/widget_banner_premium" model="[showPrices: false]"/>
+        </aside>
+    </div>
+</div>
+<g:render template="/common/footer"/>
+<g:render template="/common/analytics/yan_metr"/>
+</body>
+</html>--%>

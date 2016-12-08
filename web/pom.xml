@@ -18,7 +18,7 @@
     </properties>
 
     <build>
-        <finalName>medicinery</finalName>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
