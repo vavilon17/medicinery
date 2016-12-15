@@ -1,10 +1,7 @@
 package com.medicinery.web.filter;
 
-import com.medicinery.web.Const;
-
 import javax.servlet.*;
 import java.io.IOException;
-import java.util.Locale;
 
 /**
  * this class serves to solve problems with cyrillic text on UI

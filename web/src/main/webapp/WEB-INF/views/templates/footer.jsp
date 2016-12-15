@@ -3,8 +3,7 @@
     <div class="root">
         <ul class="footer-links">
             <li>
-                <a href="<c:url value="/"/>">О проекте</a>
-                <%--<g:link controller="main" action="about">О проекте</g:link>--%>
+                <a href="/about">О проекте</a>
             </li>
         </ul>
 

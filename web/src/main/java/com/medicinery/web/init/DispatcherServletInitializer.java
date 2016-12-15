@@ -3,6 +3,7 @@ package com.medicinery.web.init;
 import com.medicinery.core.conf.RootConfig;
 import com.medicinery.web.conf.WebConfig;
 import com.medicinery.web.filter.CharsetFilter;
+import com.medicinery.web.filter.SegmentFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
@@ -26,7 +27,9 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 
     @Override
     protected Filter[] getServletFilters() {
-        return new Filter[] {new CharsetFilter()};
+        return new Filter[] {new CharsetFilter(), new SegmentFilter()};
     }
+
+
 }
 

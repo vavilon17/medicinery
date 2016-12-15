@@ -6,7 +6,6 @@
             <th>Название</th>
             <th>Препараты</th>
         </tr>
-        <jsp:include page="/popular"/>
-        <%--<g:include controller="main" action="mostPopular" params="[toWidget: false]"/>--%>
+        <jsp:include page="/popular?toWidget=false"/>
     </table>
 </section>
