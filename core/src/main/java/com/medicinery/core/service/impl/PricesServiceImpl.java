@@ -10,14 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.List;
 
 @Component
-@Transactional
+@Transactional(readOnly = true)
 public class PricesServiceImpl implements PricesService {
 
     private static final Logger log = LoggerFactory.getLogger(PricesServiceImpl.class);

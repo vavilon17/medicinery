@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@Transactional
+@Transactional(readOnly = true)
 public class MedicineryServiceImpl implements MedicineryService {
 
     private final static int TOP = 10;
