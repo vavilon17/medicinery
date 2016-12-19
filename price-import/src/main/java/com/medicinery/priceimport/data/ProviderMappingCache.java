@@ -1,21 +1,11 @@
-package com.medicinery.core.data.entity;
+package com.medicinery.priceimport.data;
 
-import javax.persistence.*;
-
-@Deprecated
-@Entity
-@Table(name = "provider_mapping_cache")
 public class ProviderMappingCache {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "medicine_id")
-    private MedicineInfoCore medicine;
+//    private MedicineInfoCore medicine;
 
-    @Column(name = "drug_name")
     private String drugName;
 
     public Long getId() {
@@ -26,13 +16,13 @@ public class ProviderMappingCache {
         this.id = id;
     }
 
-    public MedicineInfoCore getMedicine() {
+    /*public MedicineInfoCore getMedicine() {
         return medicine;
     }
 
     public void setMedicine(MedicineInfoCore medicine) {
         this.medicine = medicine;
-    }
+    }*/
 
     public String getDrugName() {
         return drugName;

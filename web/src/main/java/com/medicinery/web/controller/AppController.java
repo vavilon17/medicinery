@@ -53,7 +53,7 @@ public class AppController {
     public String medicine(
             @PathVariable String title,
             ModelMap model , HttpServletRequest request, Device device) {
-        log.info("Start preparing medicine page for '%s'", title);
+        log.info("Start preparing medicine page for '{}'", title);
         MedicineInfoCore item = medicineryService.findMedicineWithDetails(title);
         if (item != null) {
             String segment = getSegmentFromSession(request);
@@ -81,7 +81,7 @@ public class AppController {
             model.put("fakeFileName", fakeFileName(item));
             return viewToRender;
         } else {
-            log.error("Cannot find item with name %s. isMobile = %s", title, device.isMobile());
+            log.error("Cannot find item with name {}. isMobile = {}", title, device.isMobile());
             return "errors/custom404";
         }
     }

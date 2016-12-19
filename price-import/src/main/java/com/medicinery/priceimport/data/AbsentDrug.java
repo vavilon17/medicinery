@@ -1,17 +1,8 @@
-package com.medicinery.core.data.entity;
+package com.medicinery.priceimport.data;
 
-import javax.persistence.*;
-
-@Deprecated
-@Entity
-@Table(name = "entity_drug")
 public class AbsentDrug {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "name", nullable = false)
     private String name;
 
     public Long getId() {

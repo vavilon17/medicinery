@@ -37,7 +37,7 @@ public class PricesServiceImpl implements PricesService {
     @Override
     public List<Price> providePriceList(MedicineInfoCore medicine, String segment) {
         if (!Const.SEGM_RU.equalsIgnoreCase(segment) && !Const.SEGM_UA.equalsIgnoreCase(segment)) {
-            log.error("Segment '%s'is out of predicable range", segment);
+            log.error("Segment '{}'is out of predicable range", segment);
             return Collections.emptyList();
         }
         return pricesDao.pricesByMedicine(medicine, segment);

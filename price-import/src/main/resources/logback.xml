@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>.%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
+            </Pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+    </appender>
+
+    <!--regular daily appender-->
+    <appender name="priceImportDailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/Users/vit/projects/data/medicinery/logs/medicinery-import.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <FileNamePattern>medicinery-import.%d{yyyy-MM-dd}.log</FileNamePattern>
+
+            <!-- keep 5 days' worth of history -->
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+    <logger name="com.medicinery.priceimport" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="priceImportDailyRollingFileAppender"/>
+        <appender-ref ref="consoleAppender" />
+    </logger>
+
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="consoleAppender" />
+    </root>
+</configuration>
