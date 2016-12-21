@@ -5,6 +5,8 @@ import com.medicinery.priceimport.dao.DrugstoreDao;
 import com.medicinery.priceimport.data.AbsentDrug;
 import com.medicinery.priceimport.data.Drugstore;
 import com.medicinery.priceimport.service.PriceImportService;
+import com.medicinery.priceimport.service.processor.PriceImportProcessor;
+import com.medicinery.priceimport.service.processor.impl.WerRuPriceImportProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,15 +31,23 @@ public class PriceImportServiceImpl implements PriceImportService {
     @Override
     public void runImport() {
         log.debug("Start of import process");
-        try {
+        /*try {
             for (Drugstore d : drugstoreDao.findAllActive()) {
                 log.debug("Import from {}", d.getPrintName());
 
             }
         } finally {
             absents.clear();
-        }
+        }*/
+        testImport();
         log.debug("Finish of import process");
+    }
+
+    // in test purposes - todo remove later
+    private void testImport() {
+        PriceImportProcessor werRuProcessor = new WerRuPriceImportProcessor(null, null);
+        werRuProcessor.processPrices();
+
     }
 
     private void fillAbsents() {

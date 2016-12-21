@@ -2,10 +2,12 @@ package com.medicinery.priceimport.data.mapper;
 
 import com.medicinery.priceimport.data.AbsentDrug;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Component
 public class AbsentDrugMapper implements RowMapper<AbsentDrug> {
 
     @Override

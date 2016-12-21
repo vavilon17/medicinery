@@ -19,7 +19,9 @@ public class PriceImportJob {
 
     @Scheduled(fixedDelay = 20000)
     public void runJob() {
+        System.out.println("asfasdfasdfasdfaasdfasdfasdfasdfasdf ************************** ");
         log.info("****** Price import Job - START");
+        // download files first?
         long start = System.currentTimeMillis();
         priceImportService.runImport();
         log.info("****** Price import Job - FINISH. Duration = {}", (System.currentTimeMillis() - start)/MILLS_IN_MIN);
