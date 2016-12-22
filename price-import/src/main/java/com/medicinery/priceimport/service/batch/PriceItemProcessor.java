@@ -1,4 +1,4 @@
-package com.medicinery.priceimport.service.processor.tmp;
+package com.medicinery.priceimport.service.batch;
 
 import com.medicinery.priceimport.data.jaxb.werru.Drug;
 import org.slf4j.Logger;

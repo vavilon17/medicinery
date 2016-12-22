@@ -1,7 +1,9 @@
 package com.medicinery.priceimport.data.jaxb.werru;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "drug")
 public class Drug {
 
     private String url;
@@ -10,47 +12,47 @@ public class Drug {
     private String vendor;
     private String price;
 
+    @XmlElement
     public String getUrl() {
         return url;
     }
 
-    @XmlElement
     public void setUrl(String url) {
         this.url = url;
     }
 
+    @XmlElement
     public String getName() {
         return name;
     }
 
-    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
 
+    @XmlElement
     public String getForm() {
         return form;
     }
 
-    @XmlElement
     public void setForm(String form) {
         this.form = form;
     }
 
+    @XmlElement
     public String getVendor() {
         return vendor;
     }
 
-    @XmlElement
     public void setVendor(String vendor) {
         this.vendor = vendor;
     }
 
+    @XmlElement
     public String getPrice() {
         return price;
     }
 
-    @XmlElement
     public void setPrice(String price) {
         this.price = price;
     }
