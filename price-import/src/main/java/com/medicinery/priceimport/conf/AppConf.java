@@ -87,23 +87,15 @@ public class AppConf extends WebMvcConfigurerAdapter {
         return simpleJobLauncher;
     }
 
-    /**
-     * batch part
-     */
-    /*@Bean
-    public FlatFileItemReader<Drug> reader() {
-        FlatFileItemReader<Drug> reader = new FlatFileItemReader<>();
-        reader.setResource(new ClassPathResource(env.getProperty("batch.path.wer.ru")));
-        reader.setLineMapper(new DefaultLineMapper<Drug>() {{
-            setLineTokenizer(new DelimitedLineTokenizer() {{
-                setNames(new String[] { "firstName", "lastName" });
-            }});
-            setFieldSetMapper(new BeanWrapperFieldSetMapper<Drug>() {{
-                setTargetType(Drug.class);
-            }});
-        }});
+    @Bean
+    public StaxEventItemReader<Drug> reader0() {
+        StaxEventItemReader<Drug> reader = new StaxEventItemReader<>();
+        System.out.println("Path to the resource: " + env.getProperty("batch.path.wer.ru"));
+        reader.setResource(new FileSystemResource(env.getProperty("batch.path.wer.ru")));
+        reader.setFragmentRootElementName("drug");
+        reader.setUnmarshaller(unmarshaller());
         return reader;
-    }*/
+    }
 
     @Bean
     public StaxEventItemReader<Drug> reader() {
@@ -124,7 +116,6 @@ public class AppConf extends WebMvcConfigurerAdapter {
             }
         };
     }
-
 
     @Bean
     public PriceItemProcessor processor() {
