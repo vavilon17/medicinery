@@ -36,4 +36,8 @@ public class PriceImportJob {
         }
     }
 
+    private static JobParameters provideParams() {
+        return null;
+    }
+
 }
